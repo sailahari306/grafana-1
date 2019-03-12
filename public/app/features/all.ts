@@ -5,6 +5,7 @@ import './dashboard/all';
 import './playlist/all';
 import './panel/all';
 import './org/all';
+import './apa/all';
 import './admin';
 import './alerting/NotificationsEditCtrl';
 import './alerting/NotificationsListCtrl';

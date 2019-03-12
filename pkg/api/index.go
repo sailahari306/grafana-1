@@ -244,6 +244,25 @@ func setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, error) {
 		}
 	}
 
+	pipelineNode := &dtos.NavLink{
+		Id:       "apa",
+		Text:     "APA Pipeline",
+		SubTitle: "Organization: " + c.OrgName,
+		Icon:     "gicon gicon-playlists",
+		Url:      setting.AppSubUrl + "/apa/jobs",
+		Children: []*dtos.NavLink{
+			{
+				Text:        "Jobs",
+				Id:          "jobs",
+				Description: "Run pipelines and view logs",
+				Icon:        "gicon gicon-playlists",
+				Url:         setting.AppSubUrl + "/apa/jobs",
+			},
+		},
+	}
+
+	data.NavTree = append(data.NavTree, pipelineNode)
+
 	if c.IsGrafanaAdmin || c.OrgRole == m.ROLE_ADMIN {
 		cfgNode := &dtos.NavLink{
 			Id:       "cfg",

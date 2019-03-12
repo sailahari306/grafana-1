@@ -303,6 +303,11 @@ export function setupAngularRoutes($routeProvider, $locationProvider) {
       controller: 'AlertNotificationEditCtrl',
       controllerAs: 'ctrl',
     })
+    .when('/apa/jobs', {
+      templateUrl: 'public/app/features/apa/partials/jobs.html',
+      controller: 'APAJobsCtrl',
+      controllerAs: 'ctrl',
+    })
     .otherwise({
       templateUrl: 'public/app/partials/error.html',
       controller: 'ErrorCtrl',
